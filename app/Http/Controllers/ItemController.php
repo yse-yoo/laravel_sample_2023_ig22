@@ -37,7 +37,24 @@ class ItemController extends Controller
      */
     public function show(string $id)
     {
-        return view('item.show');
+        //TODO: データベースから取得
+        //商品データ(Test Data)
+        $items = [
+            1 => "コーヒー",
+            2 => "紅茶",
+            3 => "ほうじ茶",
+        ];
+        $item = $items[$id];
+
+        // Viewに受け渡すデータを作成
+        $data = [
+            'id' => $id,
+            'item' => $item,
+        ];
+
+        // resouces/views/item/show.blade.php
+        // データ受け渡し
+        return view('item.show', $data);
     }
 
     /**
