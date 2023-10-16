@@ -19,6 +19,18 @@ Route::get('/about', function () {
     return "This is About Page.";
 });
 
+// /item/xx でアクセスしたときのルーティング
+Route::get('/item/{id}', function ($id) {
+    $message = "Product ID is {$id}";
+    return $message;
+});
+
+// Amazonのようなアクセスしたときのルーティング
+Route::get('/dp/{id}', function ($id) {
+    $message = "Product ID is {$id}";
+    return $message;
+});
+
 Route::get('/', function () {
     return view('welcome');
 });
