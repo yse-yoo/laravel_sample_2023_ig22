@@ -14,6 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// /about でアクセスしたときのルーティング
+Route::get('/about', function () {
+    return "This is About Page.";
+});
+
 Route::get('/', function () {
     return view('welcome');
 });
