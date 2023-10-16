@@ -16,11 +16,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/about', [HomeController::class, 'about']);
+Route::get('/search', [HomeController::class, 'search']);
+
 // /about でアクセスしたときのルーティング(GET)
 // Route::get('/about', function () {
 //     return view('about');
 // });
-Route::get('/about', [HomeController::class, 'about']);
 
 // /item/xx でアクセスしたときのルーティング(GET)
 Route::get('/item/{id}', function ($id) {
@@ -35,15 +37,15 @@ Route::get('/dp/{id}', function ($id) {
 });
 
 // Googleのようなアクセス（クエリーパラメータを利用）したときのルーティング(GET)
-Route::get('/search', function (Request $request) {
-    // $message = "Search word is {$request->q}";
-    // Arrayデータ
-    $data = [
-        'keyword' => $request->q
-    ];
-    // Viewにデータを渡す
-    return view('search', $data);
-});
+// Route::get('/search', function (Request $request) {
+//     // $message = "Search word is {$request->q}";
+//     // Arrayデータ
+//     $data = [
+//         'keyword' => $request->q
+//     ];
+//     // Viewにデータを渡す
+//     return view('search', $data);
+// });
 
 Route::get('/', function () {
     return view('welcome');

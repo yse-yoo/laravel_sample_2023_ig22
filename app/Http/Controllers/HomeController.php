@@ -11,4 +11,11 @@ class HomeController extends Controller
     public function about() {
         return view('about');
     }
+
+    public function search(Request $request) {
+        $data = [
+            'keyword' => $request->q
+        ];
+        return view('search', $data);
+    }
 }
