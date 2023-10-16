@@ -35,7 +35,7 @@ Route::get('/dp/{id}', function ($id) {
 // Googleのようなアクセス（クエリーパラメータを利用）したときのルーティング
 Route::get('/search', function (Request $request) {
     $message = "Search word is {$request->q}";
-    return $message;
+    return view('search');
 });
 
 Route::get('/', function () {
