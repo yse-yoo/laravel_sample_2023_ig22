@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -16,9 +17,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 // /about でアクセスしたときのルーティング(GET)
-Route::get('/about', function () {
-    return view('about');
-});
+// Route::get('/about', function () {
+//     return view('about');
+// });
+Route::get('/about', [HomeController::class, 'about']);
 
 // /item/xx でアクセスしたときのルーティング(GET)
 Route::get('/item/{id}', function ($id) {
