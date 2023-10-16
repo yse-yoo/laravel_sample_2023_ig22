@@ -37,8 +37,7 @@ class ItemController extends Controller
      */
     public function show(string $id)
     {
-        $message = "Product ID is {$id}";
-        return $message;
+        return view('item.show');
     }
 
     /**

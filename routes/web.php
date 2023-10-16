@@ -17,9 +17,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// HomeController Routing
 Route::get('/about', [HomeController::class, 'about']);
 Route::get('/search', [HomeController::class, 'search']);
 Route::get('/item/{id}', [ItemController::class, 'show']);
+
+// ItemController Routing
 Route::get('/dp/{id}', [ItemController::class, 'show']);
 
 // /about でアクセスしたときのルーティング(GET)
