@@ -34,8 +34,13 @@ Route::get('/dp/{id}', function ($id) {
 
 // Googleのようなアクセス（クエリーパラメータを利用）したときのルーティング
 Route::get('/search', function (Request $request) {
-    $message = "Search word is {$request->q}";
-    return view('search');
+    // $message = "Search word is {$request->q}";
+    // Arrayデータ
+    $data = [
+        'keyword' => $request->q
+    ];
+    // Viewにデータを渡す
+    return view('search', $data);
 });
 
 Route::get('/', function () {
@@ -52,4 +57,4 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
