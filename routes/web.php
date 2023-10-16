@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 
 // /about でアクセスしたときのルーティング
 Route::get('/about', function () {
-    return "This is About Page.";
+    return view('about');
 });
 
 // /item/xx でアクセスしたときのルーティング
