@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ItemController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -18,6 +19,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/about', [HomeController::class, 'about']);
 Route::get('/search', [HomeController::class, 'search']);
+Route::get('/item/{id}', [ItemController::class, 'show']);
+Route::get('/dp/{id}', [ItemController::class, 'show']);
 
 // /about でアクセスしたときのルーティング(GET)
 // Route::get('/about', function () {
@@ -25,16 +28,16 @@ Route::get('/search', [HomeController::class, 'search']);
 // });
 
 // /item/xx でアクセスしたときのルーティング(GET)
-Route::get('/item/{id}', function ($id) {
-    $message = "Product ID is {$id}";
-    return $message;
-});
+// Route::get('/item/{id}', function ($id) {
+//     $message = "Product ID is {$id}";
+//     return $message;
+// });
 
 // Amazonのようなアクセスしたときのルーティング(GET)
-Route::get('/dp/{id}', function ($id) {
-    $message = "Product ID is {$id}";
-    return $message;
-});
+// Route::get('/dp/{id}', function ($id) {
+//     $message = "Product ID is {$id}";
+//     return $message;
+// });
 
 // Googleのようなアクセス（クエリーパラメータを利用）したときのルーティング(GET)
 // Route::get('/search', function (Request $request) {
