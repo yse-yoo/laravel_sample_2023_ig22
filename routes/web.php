@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,6 +29,12 @@ Route::get('/item/{id}', function ($id) {
 // Amazonのようなアクセスしたときのルーティング
 Route::get('/dp/{id}', function ($id) {
     $message = "Product ID is {$id}";
+    return $message;
+});
+
+// Googleのようなアクセス（クエリーパラメータを利用）したときのルーティング
+Route::get('/search', function (Request $request) {
+    $message = "Search word is {$request->q}";
     return $message;
 });
 
