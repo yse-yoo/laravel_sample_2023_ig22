@@ -15,24 +15,24 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// /about でアクセスしたときのルーティング
+// /about でアクセスしたときのルーティング(GET)
 Route::get('/about', function () {
     return view('about');
 });
 
-// /item/xx でアクセスしたときのルーティング
+// /item/xx でアクセスしたときのルーティング(GET)
 Route::get('/item/{id}', function ($id) {
     $message = "Product ID is {$id}";
     return $message;
 });
 
-// Amazonのようなアクセスしたときのルーティング
+// Amazonのようなアクセスしたときのルーティング(GET)
 Route::get('/dp/{id}', function ($id) {
     $message = "Product ID is {$id}";
     return $message;
 });
 
-// Googleのようなアクセス（クエリーパラメータを利用）したときのルーティング
+// Googleのようなアクセス（クエリーパラメータを利用）したときのルーティング(GET)
 Route::get('/search', function (Request $request) {
     // $message = "Search word is {$request->q}";
     // Arrayデータ
