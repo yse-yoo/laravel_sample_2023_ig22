@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Item;
 
 //CRUD(Create, Read, Update, Delete)
 
@@ -35,7 +36,13 @@ class ItemController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request);
+        $posts = $request->input();
+        unset($posts['_token']);
+        // INSERT INTO items (name, price) VALUE (xxxx, xxxx);
+        Item::create($posts);
+
+        // item/ にリダイレクト
+        return redirect(route('item.index'));
     }
 
     /**
