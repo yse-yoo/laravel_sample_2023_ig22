@@ -14,6 +14,7 @@ class ItemController extends Controller
      */
     public function index()
     {
+        //SELECT * FROM items;
         $items = Item::get();
         $data = ['items' => $items];
         return view('item.index', $data);
