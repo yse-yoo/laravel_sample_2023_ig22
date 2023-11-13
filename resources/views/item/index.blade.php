@@ -1,6 +1,7 @@
 <x-app-layout>
     <h2>Item List</h2>
 
+    <a href="{{ route('item.create') }}">New</a>
     <table>
         @foreach($items as $id => $item)
         <tr>
