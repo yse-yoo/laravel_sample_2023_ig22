@@ -13,7 +13,13 @@ class ItemController extends Controller
      */
     public function index()
     {
-        //
+        $items = [
+            1 => "コーヒー",
+            2 => "紅茶",
+            3 => "ほうじ茶",
+        ];
+        $data = ['items' => $items];
+        return view('item.index', $data);
     }
 
     /**

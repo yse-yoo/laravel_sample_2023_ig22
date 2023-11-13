@@ -16,45 +16,19 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+// routes/web.php
+
 
 // HomeController Routing
 Route::get('/about', [HomeController::class, 'about'])->name('about');
+// Route::get('/about', 'HomeController@about')->name('about');
 Route::get('/search', [HomeController::class, 'search'])->name('search');
-Route::get('/item/{id}', [ItemController::class, 'show']);
 Route::get('/update/{id}', [HomeController::class, 'update']);
 
 // ItemController Routing
 Route::get('/dp/{id}', [ItemController::class, 'show']);
 Route::get('/item/', [ItemController::class, 'index'])->name('item.index');
 Route::get('/item/{id}', [ItemController::class, 'show'])->name('item.show');
-
-// /about でアクセスしたときのルーティング(GET)
-// Route::get('/about', function () {
-//     return view('about');
-// });
-
-// /item/xx でアクセスしたときのルーティング(GET)
-// Route::get('/item/{id}', function ($id) {
-//     $message = "Product ID is {$id}";
-//     return $message;
-// });
-
-// Amazonのようなアクセスしたときのルーティング(GET)
-// Route::get('/dp/{id}', function ($id) {
-//     $message = "Product ID is {$id}";
-//     return $message;
-// });
-
-// Googleのようなアクセス（クエリーパラメータを利用）したときのルーティング(GET)
-// Route::get('/search', function (Request $request) {
-//     // $message = "Search word is {$request->q}";
-//     // Arrayデータ
-//     $data = [
-//         'keyword' => $request->q
-//     ];
-//     // Viewにデータを渡す
-//     return view('search', $data);
-// });
 
 Route::get('/', function () {
     return view('welcome');
