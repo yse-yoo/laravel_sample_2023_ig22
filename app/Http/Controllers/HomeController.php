@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     public function about() {
+        // resouces/views/about.blade.php が表示
         return view('about');
     }
 
@@ -17,5 +18,9 @@ class HomeController extends Controller
             'keyword' => $request->q
         ];
         return view('search', $data);
+    }
+
+    public function update(Request $request, $id) {
+        return $id;
     }
 }

@@ -37,7 +37,7 @@ class ItemController extends Controller
      */
     public function show(string $id)
     {
-        //TODO: データベースから取得
+        //TODO: MySQLデータベースから取得
         //商品データ(Test Data)
         $items = [
             1 => "コーヒー",
