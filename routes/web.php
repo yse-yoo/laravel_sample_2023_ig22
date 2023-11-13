@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 // HomeController Routing
-Route::get('/about', [HomeController::class, 'about']);
+Route::get('/about', [HomeController::class, 'about'])->name('about');
 Route::get('/search', [HomeController::class, 'search']);
 Route::get('/item/{id}', [ItemController::class, 'show']);
 Route::get('/update/{id}', [HomeController::class, 'update']);
