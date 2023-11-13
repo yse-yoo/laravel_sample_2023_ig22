@@ -17,8 +17,9 @@ Route::get('/', function () {
 
 // ItemController
 Route::get('/item/', [ItemController::class, 'index'])->name('item.index');
+Route::get('/item/create', [ItemController::class,'create'])->name('item.create');
+Route::post('/item/store', [ItemController::class,'store'])->name('item.store');
 Route::get('/item/{id}', [ItemController::class, 'show'])->name('item.show');
-Route::get('/item/create', [ItemController::class, 'create'])->name('item.create');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
