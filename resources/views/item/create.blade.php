@@ -2,6 +2,8 @@
     <h2>Item</h2>
     <div>
         <form action="{{ route('item.store') }}" method="post">
+            @csrf
+
             <div>
                 <label>商品名</label>
                 <input type="text" name="name">

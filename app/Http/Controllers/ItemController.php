@@ -35,13 +35,13 @@ class ItemController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        dd($request);
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(int $id)
     {
         //TODO: MySQLデータベースから取得
         //商品データ(Test Data)
