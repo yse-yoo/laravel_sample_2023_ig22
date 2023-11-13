@@ -14,11 +14,7 @@ class ItemController extends Controller
      */
     public function index()
     {
-        $items = [
-            1 => "コーヒー",
-            2 => "紅茶",
-            3 => "ほうじ茶",
-        ];
+        $items = Item::get();
         $data = ['items' => $items];
         return view('item.index', $data);
     }
@@ -37,7 +33,6 @@ class ItemController extends Controller
     public function store(Request $request)
     {
         $posts = $request->input();
-        unset($posts['_token']);
         // INSERT INTO items (name, price) VALUE (xxxx, xxxx);
         Item::create($posts);
 

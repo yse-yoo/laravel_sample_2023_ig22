@@ -3,11 +3,12 @@
 
     <a href="{{ route('item.create') }}">New</a>
     <table>
-        @foreach($items as $id => $item)
+        @foreach($items as $item)
         <tr>
             <td>
-                <a href="{{ route('item.show', $id) }}">{{ $item }}</a>
+                <a href="{{ route('item.show', $item->id) }}">{{ $item->name }}</a>
             </td>
+            <td>{{ $item->price }}円</td>
         </tr>
         @endforeach
     </table>
