@@ -73,7 +73,10 @@ class ItemController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $data = [];
+
+        // resouces/views/item/edit.blade.php
+        return view('item.edit', $data);
     }
 
     /**
