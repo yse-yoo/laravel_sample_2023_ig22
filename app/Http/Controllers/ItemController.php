@@ -73,9 +73,9 @@ class ItemController extends Controller
      */
     public function edit(string $id)
     {
-        $data = [];
-
-        // resouces/views/item/edit.blade.php
+        $item = Item::find($id);
+        if (!$item) return redirect(route('item.index'));
+        $data = ['item' => $item];
         return view('item.edit', $data);
     }
 
