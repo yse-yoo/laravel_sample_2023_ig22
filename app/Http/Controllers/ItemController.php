@@ -17,6 +17,7 @@ class ItemController extends Controller
         //SELECT * FROM items;
         $items = Item::get();
         $data = ['items' => $items];
+        // resources/views/item/index.blade.php に受け渡して表示
         return view('item.index', $data);
     }
 
@@ -33,8 +34,9 @@ class ItemController extends Controller
      */
     public function store(Request $request)
     {
+        // リクエストから POSTデータを取得
         $posts = $request->input();
-        // INSERT INTO items (name, price) VALUE (xxxx, xxxx);
+        // INSERT INTO items (name, price) VALUES (xxxx, xxxx);
         Item::create($posts);
 
         // item/ にリダイレクト
