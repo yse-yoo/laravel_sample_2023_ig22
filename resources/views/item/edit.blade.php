@@ -19,7 +19,7 @@
                 <a href="{{ route('item.index') }}" class="bg-white text-blue-500 font-bold py-2 px-4 rounded">戻る</a>
             </form>
 
-            <form action="" method="post">
+            <form action="{{ route('item.destroy', $item->id) }}" method="post">
                 <button class="bg-red-500 text-sm text-white py-1 px-4 rounded focus:outline-none focus:shadow-outline" type="button">削除</button>
             </form>
         </div>
