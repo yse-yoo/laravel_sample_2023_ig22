@@ -53,15 +53,10 @@ class ItemController extends Controller
         $item = Item::find($id);
 
         //商品がなければ、商品トップページにリダイレクト 
-        if (!$item) {
-            return redirect(route('item.index'));
-        }
+        if (!$item) return redirect(route('item.index'));
 
         // Viewに受け渡すデータを作成
-        $data = [
-            'id' => $id,
-            'item' => $item,
-        ];
+        $data = ['item' => $item];
 
         // resouces/views/item/show.blade.php
         // データ受け渡し
@@ -102,6 +97,9 @@ class ItemController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        // dd($id);
+        //DELETE FROM items WHERE id = xx;
+        Item::destroy($id);
+        return redirect(route('item.index'));
     }
 }
