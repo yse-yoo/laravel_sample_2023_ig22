@@ -16,7 +16,8 @@
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100">
-            <!-- views/layouts/navigation.blade.php -->
+            <!-- @include は Blade独自の機能 -->
+            <!-- resources/views/layouts/navigation.blade.php -->
             @include('layouts.navigation')
 
             <!-- Page Heading -->
