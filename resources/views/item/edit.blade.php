@@ -1,7 +1,7 @@
 <x-app-layout>
     <h2>Item</h2>
     <div>
-        <form action="{{ route('item.update', 1) }}" method="post">
+        <form action="{{ route('item.update', $item->id) }}" method="post">
             @csrf
 
             <div>
