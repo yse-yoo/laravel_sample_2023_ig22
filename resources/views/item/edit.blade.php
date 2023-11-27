@@ -14,13 +14,14 @@
                     <label class="block text-gray-700 text-sm font-bold mb-2">価格</label>
                     <input type="text" name="price" value="{{ $item->price }}" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
                 </div>
-                <button class="bg-blue-500 text-sm text-white py-1 px-4 rounded focus:outline-none focus:shadow-outline" type="button">保存</button>
+                <button class="bg-blue-500 text-sm text-white py-1 px-4 rounded focus:outline-none focus:shadow-outline">保存</button>
 
                 <a href="{{ route('item.index') }}" class="bg-white text-blue-500 font-bold py-2 px-4 rounded">戻る</a>
             </form>
 
             <form action="{{ route('item.destroy', $item->id) }}" method="post">
-                <button class="bg-red-500 text-sm text-white py-1 px-4 rounded focus:outline-none focus:shadow-outline" type="button">削除</button>
+                @csrf
+                <button class="bg-red-500 text-sm text-white py-1 px-4 rounded focus:outline-none focus:shadow-outline">削除</button>
             </form>
         </div>
     </div>
