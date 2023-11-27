@@ -87,9 +87,11 @@ class ItemController extends Controller
         // dd($id);
         $data = $request->all();
         //Tokenを削除
-        unset($data['_token']);
+        // unset($data['_token']);
         // UPDATE items SET xxx = xxx, ... WHERE id = xx;
-        Item::where('id', $id)->update($data);
+        // Item::where('id', $id)->update($data);
+        
+        Item::find($id)->fill($data)->save();
 
         //編集画面にリダイレクト
         return redirect(route('item.edit', $id));
