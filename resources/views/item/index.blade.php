@@ -13,6 +13,7 @@
                 </th>
             </thead>
             <tbody>
+                <!-- 繰り返し表示 -->
                 @foreach($items as $item)
                 <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                     <td class="px-6 py-4">
