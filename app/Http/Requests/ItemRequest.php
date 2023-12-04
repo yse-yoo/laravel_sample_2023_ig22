@@ -15,9 +15,19 @@ class ItemRequest extends FormRequest
     public function rules(): array
     {
         return [
-            // nameカラムを、入力必須、文字列
             'name' => ['required', 'string'],
             'price' => ['required', 'integer', 'min:0', 'max:100000'],
+        ];
+    }
+
+    public function messages(): array
+    {
+        return [
+            'name.required' => "商品名を入力してください",
+            'price.required' => "価格を入力してください",
+            'price.integer' => "数値を入力してください",
+            'price.min' => "「0」以上で入力してください",
+            'price.max' => "「100,000」以下で入力してください",
         ];
     }
 }
