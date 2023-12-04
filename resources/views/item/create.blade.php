@@ -2,9 +2,12 @@
     <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
         <h2 class="mb-4 text-2xl font-extrabold leading-none tracking-tight text-gray-900 dark:text-white">New Item</h2>
 
+        <!-- Error Message -->
         <div class="mb-3 text-red-700">
             @include('components.error')
         </div>
+
+        <!-- Input Form -->
         <form action="{{ route('item.store') }}" method="post">
             @csrf
             <div class="mb-4">
