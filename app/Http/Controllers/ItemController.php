@@ -12,15 +12,16 @@ class ItemController extends Controller
 {
     public function index(Request $request)
     {
+        $order_column = ($request->order_column) ? $request->order_column : 'id';
         $order_price = ($request->order_price) ? $request->order_price : 'asc';
         if ($item_name = $request->item_name) {
             //SELECT * FROM items WHERE name LIKE '%xxxx%' ORDER BY XXX;
             $items = Item::where('name', 'LIKE', "%{$item_name}%")
-                ->orderBy('price', $order_price)
+                ->orderBy($order_column, $order_price)
                 ->get();
         } else {
             //SELECT * FROM items;
-            $items = Item::orderBy('price', $order_price)->get();
+            $items = Item::orderBy($order_column, $order_price)->get();
         }
 
         $data = [
