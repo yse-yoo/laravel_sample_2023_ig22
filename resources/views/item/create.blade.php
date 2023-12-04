@@ -1,6 +1,10 @@
 <x-app-layout>
     <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
         <h2 class="mb-4 text-2xl font-extrabold leading-none tracking-tight text-gray-900 dark:text-white">New Item</h2>
+
+        <div>
+            @include('components/error')
+        </div>
         <form action="{{ route('item.store') }}" method="post">
             @csrf
             <div class="mb-4">
