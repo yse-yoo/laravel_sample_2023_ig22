@@ -12,15 +12,18 @@ class ItemController extends Controller
 {
     public function index(Request $request)
     {
-        if ($item_name = @$request->item_name) {
-            //SELECT * FROM items WHERE name = 'xxxx';
-            $items = Item::where('name', $item_name)->get();
+        if ($item_name = $request->item_name) {
+            //SELECT * FROM items WHERE name LIKE '%xxxx%';
+            $items = Item::where('name', 'LIKE', "%{$item_name}%")->get();
         } else {
             //SELECT * FROM items;
             $items = Item::get();
         }
 
-        $data = ['items' => $items];
+        $data = [
+            'items' => $items,
+            'item_name' => $item_name,
+        ];
         // resources/views/item/index.blade.php に受け渡して表示
         return view('item.index', $data);
     }
