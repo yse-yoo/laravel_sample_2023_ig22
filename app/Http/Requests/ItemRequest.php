@@ -25,7 +25,7 @@ class ItemRequest extends FormRequest
         return [
             'name.required' => "商品名を入力してください",
             'price.required' => "価格を入力してください",
-            'price.integer' => "数値を入力してください",
+            'price.integer' => "価格は数値を入力してください",
             'price.min' => "「0」以上で入力してください",
             'price.max' => "「100,000」以下で入力してください",
         ];
