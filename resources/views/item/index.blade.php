@@ -22,6 +22,20 @@
                     </th>
                     <th scope="col" class="px-6 py-3">
                         {{ __('Price') }}
+                        <a href="{{ 
+                            route('item.index', 
+                            [ 
+                                'order_column' => 'price',
+                                'order_value' => 'desc'
+                            ])
+                        }}">▼</a>
+                        <a href="{{ 
+                            route('item.index', 
+                            [ 
+                                'order_column' => 'price',
+                                'order_value' => 'asc'
+                            ])
+                        }}">▲</a>
                     </th>
                 </thead>
                 <tbody>
