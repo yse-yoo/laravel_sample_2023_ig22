@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ItemRequest;
 use Illuminate\Http\Request;
 use App\Models\Item;
 
@@ -9,9 +10,6 @@ use App\Models\Item;
 
 class ItemController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
         //SELECT * FROM items;
@@ -21,26 +19,15 @@ class ItemController extends Controller
         return view('item.index', $data);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
         return view('item.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
+    public function store(ItemRequest $request)
     {
         // リクエストから POSTデータを取得
         $posts = $request->input();
-
-        // Controllerで Validateする方法
-        // if ($posts['name'] && $posts['price']) {
-        //     Item::create($posts);
-        // }
 
         // INSERT INTO items (name, price) VALUES (xxxx, xxxx);
         Item::create($posts);
@@ -49,9 +36,6 @@ class ItemController extends Controller
         return redirect(route('item.index'));
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show(int $id)
     {
         //TODO: MySQLデータベースから取得
