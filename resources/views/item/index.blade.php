@@ -6,8 +6,9 @@
 
             <div class="mb-3">
                 <form action="{{ route('item.index') }}" method="get">
-                    <input type="text" name="item_name">
-                    <button>{{ __('message.search') }}</button>
+                    <input type="text" name="item_name" value="" class="border rounded w-1/2 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                    <button class="bg-blue-500 text-sm text-white py-1 px-4 rounded focus:outline-none focus:shadow-outline">{{__('message.search')}}</button>
+                    <a href="{{ route('item.index') }}" class="bg-white text-blue-500 font-bold py-2 px-4 rounded">{{__('message.clear')}}</a>
                 </form>
             </div>
 
