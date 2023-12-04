@@ -30,4 +30,12 @@ class ItemRequest extends FormRequest
             // 'price.max' => "「100,000」以下で入力してください",
         ];
     }
+
+    public function attributes()
+    {
+        return [
+            'name' => __('message.item_name'),
+            'price' => __('message.price'),
+        ];
+    }
 }
