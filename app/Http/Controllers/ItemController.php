@@ -36,6 +36,12 @@ class ItemController extends Controller
     {
         // リクエストから POSTデータを取得
         $posts = $request->input();
+
+        // Controllerで Validateする方法
+        // if ($posts['name'] && $posts['price']) {
+        //     Item::create($posts);
+        // }
+
         // INSERT INTO items (name, price) VALUES (xxxx, xxxx);
         Item::create($posts);
 
@@ -68,6 +74,7 @@ class ItemController extends Controller
      */
     public function edit(string $id)
     {
+        // SELECT * FROM items WHERE id = xx;
         $item = Item::find($id);
         if (!$item) return redirect(route('item.index'));
         $data = ['item' => $item];
@@ -83,9 +90,10 @@ class ItemController extends Controller
         $data = $request->all();
         //Tokenを削除
         // unset($data['_token']);
-        // UPDATE items SET xxx = xxx, ... WHERE id = xx;
         // Item::where('id', $id)->update($data);
-        
+
+        // SELECT * FROM items WHERE id = xx;
+        // UPDATE items SET xxx = xxx, ... WHERE id = xx;
         Item::find($id)->fill($data)->save();
 
         //編集画面にリダイレクト
