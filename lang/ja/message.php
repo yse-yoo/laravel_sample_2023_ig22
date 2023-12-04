@@ -4,4 +4,5 @@ return [
     'price' => '価格',
     'save' => '保存',
     'back' => '戻る',
+    'search' => '検索',
 ];
