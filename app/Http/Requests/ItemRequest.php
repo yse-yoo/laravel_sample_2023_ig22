@@ -17,7 +17,7 @@ class ItemRequest extends FormRequest
         return [
             // nameカラムを、入力必須、文字列
             'name' => ['required', 'string'],
-            'price' => ['required', 'integer', 'min:0'],
+            'price' => ['required', 'integer', 'min:0', 'max:100000'],
         ];
     }
 }
