@@ -12,6 +12,9 @@
                 </form>
             </div>
 
+            <p>
+                {{ request('order_column')}}
+            </p>
             <a href="{{ route('item.create') }}" class="bg-white text-blue-500 font-bold py-2 px-4 rounded">New</a>
             <table class="text-sm text-left rtl:text-right text-gray-500">
                 <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
@@ -26,14 +29,16 @@
                             route('item.index', 
                             [ 
                                 'order_column' => 'price',
-                                'order_value' => 'desc'
+                                'order_value' => 'desc',
+                                'item_name' => $item_name,
                             ])
                         }}">▼</a>
                         <a href="{{ 
                             route('item.index', 
                             [ 
                                 'order_column' => 'price',
-                                'order_value' => 'asc'
+                                'order_value' => 'asc',
+                                'item_name' => $item_name,
                             ])
                         }}">▲</a>
                     </th>
