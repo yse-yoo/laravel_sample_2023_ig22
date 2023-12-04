@@ -10,10 +10,16 @@ use App\Models\Item;
 
 class ItemController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        //SELECT * FROM items;
-        $items = Item::get();
+        if ($item_name = @$request->item_name) {
+            //SELECT * FROM items WHERE name = 'xxxx';
+            $items = Item::where('name', $item_name)->get();
+        } else {
+            //SELECT * FROM items;
+            $items = Item::get();
+        }
+
         $data = ['items' => $items];
         // resources/views/item/index.blade.php に受け渡して表示
         return view('item.index', $data);
