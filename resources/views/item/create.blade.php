@@ -3,7 +3,7 @@
         <h2 class="mb-4 text-2xl font-extrabold leading-none tracking-tight text-gray-900 dark:text-white">New Item</h2>
 
         <div>
-            @include('components/error')
+            @include('components.error')
         </div>
         <form action="{{ route('item.store') }}" method="post">
             @csrf
